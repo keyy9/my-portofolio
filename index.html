@@ -291,21 +291,24 @@ h1.ht{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.4rem);li
 .cert-badge{display:inline-block;font-size:.62rem;font-weight:800;padding:.18rem .6rem;border-radius:50px;margin-top:.4rem}
 
 /* ══════════════════════════════════
-   TESTIMONIALS
+   RECENT ACTIVITIES
 ══════════════════════════════════ */
 #testimonials{background:var(--surface)}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
-.testi-card{background:var(--bg);border-radius:24px;padding:2rem;border:1px solid var(--border);transition:all .35s;position:relative;overflow:hidden}
+.testi-card{background:var(--bg);border-radius:24px;padding:0;border:1px solid var(--border);transition:all .35s;position:relative;overflow:hidden}
 .dark .testi-card{background:var(--card)}
 .testi-card:hover{transform:translateY(-6px);box-shadow:0 18px 46px rgba(196,181,253,.18)}
-.testi-quote{font-size:2.5rem;color:var(--pk);opacity:.4;line-height:1;margin-bottom:.8rem;font-family:'Playfair Display',serif}
-.testi-text{font-size:.87rem;color:var(--text2);line-height:1.78;margin-bottom:1.4rem;font-style:italic}
-.testi-author{display:flex;align-items:center;gap:.85rem}
-.testi-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-.testi-name{font-weight:800;font-size:.84rem;color:var(--text1)}
-.testi-role{font-size:.72rem;color:var(--text3)}
-.testi-stars{color:#f59e0b;font-size:.75rem;margin-bottom:.3rem}
-.testi-tag{position:absolute;top:1.2rem;right:1.2rem;font-size:.62rem;font-weight:800;padding:.18rem .6rem;border-radius:50px;background:rgba(232,121,166,.12);color:var(--pk)}
+.act-thumb{height:160px;position:relative;border-radius:24px 24px 0 0;overflow:hidden}
+.act-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.testi-card:hover .act-thumb img{transform:scale(1.06)}
+.act-thumb-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.8rem;opacity:.35}
+.act-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.28) 0%,transparent 55%);z-index:1}
+.act-body{padding:1.5rem}
+.act-date{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem}
+.act-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--text1);margin-bottom:.25rem;line-height:1.3}
+.act-org{font-size:.78rem;font-weight:600;color:var(--pk);margin-bottom:.65rem}
+.act-desc{font-size:.8rem;color:var(--text3);line-height:1.7}
+.act-tag{position:absolute;top:1rem;right:1rem;font-size:.62rem;font-weight:800;padding:.18rem .6rem;border-radius:50px;z-index:2}
 
 /* ══════════════════════════════════
    TIMELINE — clickable cards
@@ -511,7 +514,7 @@ footer{background:#0a0514;padding:3.5rem 4rem}
     <li><a href="#projects">Projects</a></li>
     <li><a href="#certs">Courses</a></li>
     <li><a href="#journey">Journey</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#testimonials">Activities</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -547,6 +550,7 @@ footer{background:#0a0514;padding:3.5rem 4rem}
           <div><div class="hs-v" data-count="386" data-gpa="true">0</div><div class="hs-l">GPA</div></div>
           <div><div class="hs-v" data-count="2">0</div><div class="hs-l">Medals & Awards</div></div>
         </div>
+
         <div class="hero-ctas">
           <a href="#projects" class="btn-p">View My Work ✦</a>
           <a href="#contact" class="btn-s">Let's Connect →</a>
@@ -897,18 +901,106 @@ footer{background:#0a0514;padding:3.5rem 4rem}
   </div>
 </section>
 
-<!-- ════ TESTIMONIALS ════ -->
+<!-- ════ RECENT ACTIVITIES ════ -->
 <section id="testimonials">
   <div class="section-inner">
     <div class="reveal" style="text-align:center">
-      <div class="section-tag">Kind Words</div>
-      <h2 class="section-title">What People <span class="g">Say</span></h2>
-      <p class="section-sub" style="max-width:520px;margin:0 auto">Feedback from collaborators, mentors, and teammates who have worked alongside me.</p>
+      <div class="section-tag">Out &amp; About</div>
+      <h2 class="section-title">Recent <span class="g">Activities</span></h2>
+      <p class="section-sub" style="max-width:520px;margin:0 auto">From company visits and seminars to volunteering — a glimpse of what I've been up to lately.</p>
     </div>
     <div class="testi-grid">
-      <div class="testi-card reveal"><span class="testi-tag">Robotics</span><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Kheysa's work on the autonomous patrol robot was exceptional. Integrating YOLO and RT-DETR for real-time hand detection while maintaining 99.5% accuracy on embedded hardware is no small feat — her attention to optimisation is remarkable.</p><div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">🧑‍🏫</div><div><div class="testi-name">WICE 2025 Evaluator</div><div class="testi-role">IoT & Robotics Category Judge</div></div></div></div>
-      <div class="testi-card reveal d2"><span class="testi-tag">Volunteering</span><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Kheysa stepped into the teaching role seamlessly on multiple occasions and kept our class running without a gap. Her organisational skills — managing 40 Zoom meetings and tracking 30 students — were truly impressive.</p><div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">👩‍💼</div><div><div class="testi-name">ScholarIndo Foundation</div><div class="testi-role">Primary Mentor, English Programme</div></div></div></div>
-      <div class="testi-card reveal d4"><span class="testi-tag">Organisation</span><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">As Head of Division for Academic and Competition, Kheysa led five strategic workplans with consistency and clarity. She shared scholarship information proactively and was a reliable point of contact for the entire Informatics community.</p><div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#10b981,#06b6d4)">🧑‍💻</div><div><div class="testi-name">PUMA Informatics</div><div class="testi-role">Executive Board · President University</div></div></div></div>
+
+      <div class="testi-card reveal">
+        <div class="act-thumb" style="background:linear-gradient(135deg,#dbeafe,#ede9fe)">
+          <img src="img/activities/company-visit.jpg" alt="Company Visit PT Vinix Seven Aurum" onerror="this.style.display='none'">
+          <div class="act-thumb-placeholder">&#127970;</div>
+          <div class="act-thumb-overlay"></div>
+          <span class="act-tag" style="background:rgba(59,130,246,.85);color:#fff">Company Visit</span>
+        </div>
+        <div class="act-body">
+          <div class="act-date">2025</div>
+          <div class="act-title">Company Visit — PT Vinix Seven Aurum</div>
+          <div class="act-org">Bekasi, West Java</div>
+          <p class="act-desc">Got a firsthand look at how a tech company runs its ML and data engineering pipelines — the visit sparked my interest in joining their team as a Python ML intern shortly after.</p>
+        </div>
+      </div>
+
+      <div class="testi-card reveal d2">
+        <div class="act-thumb" style="background:linear-gradient(135deg,#d1fae5,#fce7f3)">
+          <img src="img/activities/oisaa-symposium.jpg" alt="OISAA Symposium 2025" onerror="this.style.display='none'">
+          <div class="act-thumb-placeholder">&#127908;</div>
+          <div class="act-thumb-overlay"></div>
+          <span class="act-tag" style="background:rgba(16,185,129,.85);color:#fff">Seminar</span>
+        </div>
+        <div class="act-body">
+          <div class="act-date">Feb — Sep 2025</div>
+          <div class="act-title">OISAA Symposium — American-European 2025</div>
+          <div class="act-org">Research Team Volunteer &amp; MC</div>
+          <p class="act-desc">Served as MC for the Best Paper Awarding Session and contributed to call-for-paper preparation and guidebook design for the international symposium, attended by ~30 participants.</p>
+        </div>
+      </div>
+
+      <div class="testi-card reveal d4">
+        <div class="act-thumb" style="background:linear-gradient(135deg,#fce7f3,#fef9c3)">
+          <img src="img/activities/scholarindo-volunteer.jpg" alt="ScholarIndo Foundation Volunteer" onerror="this.style.display='none'">
+          <div class="act-thumb-placeholder">&#129309;</div>
+          <div class="act-thumb-overlay"></div>
+          <span class="act-tag" style="background:rgba(232,121,166,.85);color:#fff">Volunteering</span>
+        </div>
+        <div class="act-body">
+          <div class="act-date">May 2025 — Jan 2026</div>
+          <div class="act-title">Co-mentor Volunteer — ScholarIndo Foundation</div>
+          <div class="act-org">English Programme, Online</div>
+          <p class="act-desc">Managed a class of 30 students, coordinated 40 Zoom sessions, and stepped in as substitute teacher on 6 occasions to keep the English learning programme running smoothly.</p>
+        </div>
+      </div>
+
+      <div class="testi-card reveal d1">
+        <div class="act-thumb" style="background:linear-gradient(135deg,#fff1f2,#ede9fe)">
+          <img src="img/activities/hackathon-2026.jpg" alt="PUMA Informatics Hackathon 2026" onerror="this.style.display='none'">
+          <div class="act-thumb-placeholder">&#128187;</div>
+          <div class="act-thumb-overlay"></div>
+          <span class="act-tag" style="background:rgba(139,92,246,.85);color:#fff">Event</span>
+        </div>
+        <div class="act-body">
+          <div class="act-date">2026</div>
+          <div class="act-title">PUMA Informatics Hackathon 2026</div>
+          <div class="act-org">President University — Supervisor &amp; Division Head</div>
+          <p class="act-desc">Supervised all five divisions of the hackathon event, authored the full event rundown, and ensured smooth execution across the programme from planning to closing ceremony.</p>
+        </div>
+      </div>
+
+      <div class="testi-card reveal d3">
+        <div class="act-thumb" style="background:linear-gradient(135deg,#fef9c3,#d1fae5)">
+          <img src="img/activities/wice-2025.jpg" alt="WICE 2025 Competition" onerror="this.style.display='none'">
+          <div class="act-thumb-placeholder">&#129352;</div>
+          <div class="act-thumb-overlay"></div>
+          <span class="act-tag" style="background:rgba(245,158,11,.85);color:#fff">Competition</span>
+        </div>
+        <div class="act-body">
+          <div class="act-date">2025</div>
+          <div class="act-title">WICE 2025 — IoT &amp; Robotics</div>
+          <div class="act-org">International Competition · Silver Medal</div>
+          <p class="act-desc">Competed at the international level with the Automatic Patrol Robot, winning Silver in the IoT &amp; Robotics category with a 99.5% mAP@50 computer vision system on embedded hardware.</p>
+        </div>
+      </div>
+
+      <div class="testi-card reveal d5">
+        <div class="act-thumb" style="background:linear-gradient(135deg,#ede9fe,#dbeafe)">
+          <img src="img/activities/beasiswa-unggulan.jpg" alt="Beasiswa Unggulan 2024" onerror="this.style.display='none'">
+          <div class="act-thumb-placeholder">&#127891;</div>
+          <div class="act-thumb-overlay"></div>
+          <span class="act-tag" style="background:rgba(139,92,246,.85);color:#fff">Academic</span>
+        </div>
+        <div class="act-body">
+          <div class="act-date">2024 — Present</div>
+          <div class="act-title">Beasiswa Unggulan 2024 Awardee</div>
+          <div class="act-org">Kemendikbud — President University</div>
+          <p class="act-desc">Awarded the Beasiswa Unggulan national scholarship for academic merit. Also helped coordinate the 2025 recruitment cycle, guiding prospective applicants through Stage 1 submissions.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1078,6 +1170,39 @@ function filterProj(cat,btn){
     });
   },280);
 }
+
+const counters = document.querySelectorAll('.hs-v');
+
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-count');
+    const suffix = counter.getAttribute('data-suffix') || '';
+    const isGpa = counter.getAttribute('data-gpa');
+
+    let count = 0;
+    const increment = target / 50;
+
+    function updateCounter() {
+      if (count < target) {
+        count += increment;
+
+        if (isGpa) {
+          counter.innerText = (count / 100).toFixed(2);
+        } else {
+          counter.innerText = Math.ceil(count) + suffix;
+        }
+
+        requestAnimationFrame(updateCounter);
+      } else {
+        if (isGpa) {
+          counter.innerText = (target / 100).toFixed(2);
+        } else {
+          counter.innerText = target + suffix;
+        }
+      }
+    }
+
+    updateCounter();
+  });
 
 /* ─── PROJECT MODAL ─── */
 function openModal(card){
