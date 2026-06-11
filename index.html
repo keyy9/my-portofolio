@@ -487,7 +487,7 @@ h1.ht{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.4rem);li
 .proj-card.hidden{display:none}
 .proj-card.fade-out{opacity:0;transform:scale(.94) translateY(10px)}
 .proj-card.fade-in{opacity:1;transform:translateY(0)}
-.proj-thumb{height:158px;display:flex;align-items:center;justify-content:center;font-size:3.3rem;position:relative;overflow:hidden}
+.proj-thumb{height: 180px;display:flex;align-items:center;justify-content:center;font-size:3.3rem;position:relative;overflow:hidden}
 .proj-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:.75rem;opacity:0;background:linear-gradient(135deg,rgba(109,40,217,.87),rgba(192,38,211,.8));transition:all .35s}
 .proj-card:hover .proj-overlay{opacity:1}
 .pob{padding:.48rem 1rem;border-radius:50px;font-size:.7rem;font-weight:800;text-decoration:none;transition:transform .2s}
@@ -500,6 +500,16 @@ h1.ht{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.4rem);li
 .proj-desc{font-size:.78rem;color:var(--text3);line-height:1.65;margin-bottom:.9rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .tech-wrap{display:flex;flex-wrap:wrap;gap:.35rem}
 .tech-tag{font-size:.66rem;font-weight:700;padding:.2rem .68rem;border-radius:50px;background:rgba(196,181,253,.12);color:var(--text2)}
+.proj-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transition:transform .6s ease;
+}
+.proj-card:hover .proj-thumb img{
+    transform:scale(1.06);
+}
 
 /* ── SHARED MODAL (project + course + timeline) ── */
 #modal-bg,#detail-bg{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(0,0,0,.65);backdrop-filter:blur(14px);overflow-y:auto}
@@ -1029,7 +1039,7 @@ footer{background:#0a0514;padding:3.5rem 4rem}
     </div>
     <div class="proj-grid" id="projGrid">
       <div class="proj-card" data-cat="iot" onclick="openModal(this)" data-title="Automatic Patrol Robot" data-emoji="🤖" data-grad="#fce7f3,#ede9fe" data-desc="Built an autonomous mobile robot using ESP32 and IR line tracking, integrated with computer vision (YOLO, RT-DETR) for real-time hand detection and touchless sanitizer activation. Achieved up to 99.5% mAP@50 accuracy through model optimisation with pre-processing and augmentation pipelines." data-tags="ESP32,YOLO,RT-DETR,OpenCV,IR Line Tracking" data-award="🥈 WICE 2025 — Silver Medal">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#fce7f3,#ede9fe)">🤖<div class="proj-overlay"><a class="pob pob-gh" onclick="event.stopPropagation()">GitHub ↗</a><a class="pob pob-live" onclick="event.stopPropagation()">Demo ↗</a></div><span class="proj-award">🥈 WICE 2025</span></div>
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#fce7f3,#ede9fe)"><img src="wice2.png" alt="Automatic Patrol Robot"><div class="proj-overlay"><a class="pob pob-gh" onclick="event.stopPropagation()">GitHub ↗</a><a class="pob pob-live" onclick="event.stopPropagation()">Demo ↗</a></div><span class="proj-award">🥈 WICE 2025</span></div>
         <div class="proj-info"><div class="proj-title">Automatic Patrol Robot</div><div class="proj-desc">Autonomous hygiene robot using ESP32 + YOLO for real-time hand detection and touchless sanitizer activation. 99.5% mAP@50.</div><div class="tech-wrap"><span class="tech-tag">ESP32</span><span class="tech-tag">YOLO</span><span class="tech-tag">RT-DETR</span><span class="tech-tag">OpenCV</span></div></div>
       </div>
       <div class="proj-card" data-cat="nlp" onclick="openModal(this)" data-title="NutriBot" data-emoji="🥗" data-grad="#d1fae5,#dbeafe" data-desc="Developed an AI-powered nutrition assistant with Next.js and Flask, powered by local LLMs (LLaMA 3.2 & Qwen 2.5) for meal planning and chat interaction. Designed an NLP pipeline covering data retrieval, summarisation, and structured JSON dashboard output with built-in response validation." data-tags="Next.js,Flask,LLaMA 3.2,Qwen 2.5,NLP">
@@ -1192,8 +1202,6 @@ footer{background:#0a0514;padding:3.5rem 4rem}
       <div class="testi-card reveal d2">
         <div class="act-thumb" style="background:linear-gradient(135deg,#d1fae5,#fce7f3)">
           <img src="simposium.png" alt="OISAA Symposium 2025" onerror="this.style.display='none'">
-          <div class="act-thumb-placeholder">&#127908;</div>
-          <div class="act-thumb-overlay"></div>
           <span class="act-tag" style="background:rgba(16,185,129,.85);color:#fff">Seminar</span>
         </div>
         <div class="act-body">
@@ -1234,8 +1242,6 @@ footer{background:#0a0514;padding:3.5rem 4rem}
       <div class="testi-card reveal d3">
         <div class="act-thumb" style="background:linear-gradient(135deg,#fef9c3,#d1fae5)">
           <img src="wice.jpg" alt="WICE 2025 Competition" onerror="this.style.display='none'">
-          <div class="act-thumb-placeholder">&#129352;</div>
-          <div class="act-thumb-overlay"></div>
           <span class="act-tag" style="background:rgba(245,158,11,.85);color:#fff">Competition</span>
         </div>
         <div class="act-body">
@@ -1249,8 +1255,6 @@ footer{background:#0a0514;padding:3.5rem 4rem}
       <div class="testi-card reveal d5">
         <div class="act-thumb" style="background:linear-gradient(135deg,#ede9fe,#dbeafe)">
           <img src="beasiswa.png" alt="Beasiswa Unggulan 2024" onerror="this.style.display='none'">
-          <div class="act-thumb-placeholder">&#127891;</div>
-          <div class="act-thumb-overlay"></div>
           <span class="act-tag" style="background:rgba(139,92,246,.85);color:#fff">Academic</span>
         </div>
         <div class="act-body">
